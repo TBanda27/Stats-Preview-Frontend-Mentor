@@ -1,0 +1,153 @@
+/* Import font styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+/* declaring global colors */
+:root {
+  --main-background: hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --transparent-white-1: hsla(0, 0%, 100%, 0.75);
+  --transparent-white-2: hsla(0, 0%, 100%, 0.6);
+  --font-size: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+body {
+  background: var(--main-background);
+}
+.container {
+  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px !important;
+  background: var(--desaturated-blue);
+}
+.image-container {
+  position: relative;
+}
+.desktop-image {
+  display: none;
+}
+.mobile-image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: var(--soft-violet);
+  opacity: 0.5;
+}
+.hero {
+  padding: 3rem 2rem;
+}
+.hero h1 {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.hero h1 span {
+  color: var(--soft-violet);
+}
+.hero p {
+  font-family: "Inter", sans-serif;
+  color: var(--transparent-white-1);
+  margin-bottom: 2.5rem;
+  font-size: var(--font-size);
+}
+ul li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+ul li h3 {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--white);
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+ul li h5 {
+  font-family: "Inter", sans-serif;
+  color: var(--transparent-white-2);
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 12px;
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 10px;
+    padding: 0;
+  }
+  .mobile-image {
+    display: none;
+  }
+  .desktop-image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+  }
+  .overlay {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+  }
+  .hero {
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  .hero ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .image-container {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 730px) and (max-width: 1200px) {
+  .container {
+    width: 45%;
+  }
+  .mobile-image {
+    display: none;
+  }
+  .desktop-image {
+    /* display: none; */
+    display: block;
+    width: 100%;
+    object-fit: fill;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
